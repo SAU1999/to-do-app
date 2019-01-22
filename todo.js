@@ -59,18 +59,19 @@ function addTaskInsertHtml(val,ind){
 
 
 function DeletAllTask(){
-    //debugger;
+    debugger;
     ul = document.querySelector(".list-group");
     length = ul.children.length;
     console.log("saurabh");
     console.log(length);
     var i = 0;
     while (i < length) {
+        
         if(ul.children[i] && ul.children[i].firstChild){
             if(ul.children[i].firstChild.checked){
                 ul.removeChild(ul.children[i]);
-                storageTasks.splice(i,1);
-
+                storageTasks.splice(i-1,1);
+                --i;
             }
 
         }
